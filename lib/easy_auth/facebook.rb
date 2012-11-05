@@ -1,6 +1,6 @@
-require 'easy_auth-o_auth2'
+require 'easy_auth-oauth2'
 require 'easy_auth/facebook/engine'
 
-module EasyAuth::Models::Identities::OAuth2
+module EasyAuth::Models::Identities::Oauth2
   autoload :Facebook
 end
