@@ -1,8 +1,6 @@
 require 'spec_helper'
 
-feature 'Facebook OAuth Authentication', :js do
-  use_vcr_cassette 'facebook_oauth', :match_requests_on => [:uri]
-
+feature 'Facebook OAuth Authentication', :js, :vcr do
   scenario 'Facebook link redirects to the Facebook OAuth url' do
     visit root_path
 

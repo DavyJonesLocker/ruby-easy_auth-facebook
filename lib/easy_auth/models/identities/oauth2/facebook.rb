@@ -1,8 +1,4 @@
 module EasyAuth::Models::Identities::Oauth2::Facebook
-  def oauth2_scope
-    'email'
-  end
-
   def account_attributes_map
     { :username => 'username', :email => 'email', :first_name => 'first_name', :last_name => 'last_name' }
   end
@@ -11,8 +7,8 @@ module EasyAuth::Models::Identities::Oauth2::Facebook
     '/dialog/oauth'
   end
 
-  def token_options(callback_url)
-    super.merge(:parse => :query)
+  def oauth2_scope
+    'email'
   end
 
   def user_info_url
@@ -25,5 +21,13 @@ module EasyAuth::Models::Identities::Oauth2::Facebook
 
   def site_url
     'https://www.facebook.com'
+  end
+
+  def retrieve_uid(user_info)
+    user_info['email']
+  end
+
+  def token_options(callback_url)
+    super.merge(:parse => :query)
   end
 end
