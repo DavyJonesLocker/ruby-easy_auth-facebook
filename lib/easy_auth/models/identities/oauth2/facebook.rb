@@ -24,7 +24,7 @@ module EasyAuth::Models::Identities::Oauth2::Facebook
   end
 
   def retrieve_uid(user_info)
-    user_info['email']
+    user_info['id']
   end
 
   def token_options(callback_url)
