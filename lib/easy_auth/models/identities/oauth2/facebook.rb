@@ -11,7 +11,7 @@ module EasyAuth::Models::Identities::Oauth2::Facebook
     'email'
   end
 
-  def user_info_url
+  def account_attributes_url
     'https://graph.facebook.com/me'
   end
 
@@ -23,8 +23,8 @@ module EasyAuth::Models::Identities::Oauth2::Facebook
     'https://www.facebook.com'
   end
 
-  def retrieve_uid(user_info)
-    user_info['id']
+  def retrieve_uid(account_attributes)
+    account_attributes['id']
   end
 
   def token_options(callback_url)
